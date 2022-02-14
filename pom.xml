@@ -9,9 +9,6 @@
     <packaging>pom</packaging>
     <name>demo</name>
 
-    <modules>
-        <module>spring1</module>
-    </modules>
 
 
     <properties>

@@ -1,15 +1,18 @@
-package org.example.bean;
+package com.example.spring1.bean;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BService {
+@Slf4j
+public class CommonBean1 {
 
     @Autowired
-    AService aService;
+    CommonBean2 commonBean2;
 
     public void print() {
-        System.out.println("BService print");
+        log.info("CommonBean1 print");
     }
+
 }
