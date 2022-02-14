@@ -14,7 +14,8 @@ import javax.annotation.PostConstruct;
 @Slf4j
 public class Spring1Application {
 
-
+    @Autowired
+    BBean bBean;
     @Autowired
     SelfBean2 selfBean2;
     @Autowired
@@ -42,6 +43,7 @@ public class Spring1Application {
         aBean.print();
         transactionalBean.print();
         asyncBean.print();
+        bBean.print();
     }
 
     public static void main(String[] args) {

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: fund
+  profiles:
+    active: log,task
+  aop:
+    proxy-target-class: true
+  main:
+    allow-circular-references: true
+
+demo:
+  testValue: 20

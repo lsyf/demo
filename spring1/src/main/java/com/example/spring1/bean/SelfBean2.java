@@ -16,12 +16,15 @@ public class SelfBean2 {
     @Autowired
     SelfBean2 selfBean2;
 
-    @Transactional
     @PostConstruct
-    public void print() {
+    public void init() {
         a = 2;
-        System.out.println(this.a);
+    }
+
+    @Transactional
+    public void print() {
         log.info("SelfBean2 print");
+        System.out.println(this.a);
         System.out.println(selfBean2.a);
     }
 
