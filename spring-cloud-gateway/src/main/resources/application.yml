@@ -1,0 +1,37 @@
+server:
+  port: 9999
+
+logging:
+  level:
+    root: info
+    org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping: debug
+    reactor.netty.http.client.HttpClientConnect: debug
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 4500
+        readTimeout: 6000
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test
+          uri: http://localhost:10001
+          predicates:
+            - Path=/test/**
+          filters:
+            - PrefixPath=/
+      httpclient:
+#        pool:
+#          acquire-timeout: 1500
+#          maxIdleTime: 1000
+#          max-life-time: 4000
+#          max-connections: 5000
+        response-timeout: 6000
+        connect-timeout: 4500
+      default-filters:
+        - StripPrefix=1
+        - name: RequestSize
+          args:
+            maxSize: 1
