@@ -11,7 +11,7 @@ import org.junit.Test;
 import java.security.KeyFactory;
 import java.security.spec.X509EncodedKeySpec;
 
-public class AppTest {
+public class RSATest {
 
 
     @Test
