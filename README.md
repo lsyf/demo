@@ -1,1 +1,1 @@
-- spring1: 循环依赖
+- spring1: IOC,AOP,annotation

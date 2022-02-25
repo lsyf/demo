@@ -6,12 +6,6 @@ logging:
     root: info
     org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping: debug
     reactor.netty.http.client.HttpClientConnect: debug
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 4500
-        readTimeout: 6000
 spring:
   cloud:
     gateway:
@@ -23,11 +17,11 @@ spring:
           filters:
             - PrefixPath=/
       httpclient:
-#        pool:
-#          acquire-timeout: 1500
-#          maxIdleTime: 1000
-#          max-life-time: 4000
-#          max-connections: 5000
+        pool:
+          acquire-timeout: 1500
+          maxIdleTime: 1000
+          max-life-time: 4000
+          max-connections: 5000
         response-timeout: 6000
         connect-timeout: 4500
       default-filters:
