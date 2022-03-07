@@ -1,0 +1,12 @@
+mapper:
+  identity: MYSQL
+  mappers: com.lsyf.fund.util.MyMapper
+  not-empty: false
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.lsyf.fund.dao.bean
+pagehelper:
+  helperDialect: mysql
+  params: count=countSql
+  reasonable: true
+  supportMethodsArguments: true

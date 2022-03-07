@@ -1,0 +1,8 @@
+logging:
+  level:
+    root: info
+    org.hibernate: warn
+    org.springframework.orm: warn
+    org.springframework.data: warn
+    com.zaxxer: warn
+    com.alibaba.cloud: debug

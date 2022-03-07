@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.lsyf.fund.util.MyMapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.130.103:3306/cloud_member"
+                        userId="root"
+                        password="123">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}">
+            <!--            <property name="immutable" value="true"></property>-->
+            <!--            <property name="constructorBased" value="false"></property>-->
+            <property name="enableSubPackages" value="false"></property>
+            <property name="trimStrings" value="false"></property>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="${targetXMLPackage}" targetProject="${targetResourcesProject}"/>
+
+        <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}"
+                             type="XMLMAPPER"/>
+
+        <!--        <table tableName="CHNL_UNITE_CODE_MAPPING" domainObjectName="TChannelCode">-->
+        <!--            <generatedKey column="ID" sqlStatement="Mysql" identity="true"/>-->
+        <!--        </table>-->
+
+        <table tableName="TT_BASE_MCHINFO" domainObjectName="TMerchant">
+            <generatedKey column="OID_TRADERNO" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <table tableName="merchant_pay_chnl_config" domainObjectName="TMerchantChannel">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <table tableName="merchant_config" domainObjectName="TMerchantConfig">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="TB_TRADERPARA" domainObjectName="TMerchantParam">
+            <generatedKey column="oid_traderno" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
